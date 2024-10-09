@@ -160,20 +160,22 @@ nav .nav-button:hover {
   text-align: center;
 }
 
+/* Mobile-specific layout adjustments */
 @media all and (max-width: 980px) {
-  .banner {
-    padding-top: 0;
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full-width navbar */
+    z-index: 1000; /* Ensure it's always on top */
   }
 
-  nav {
-    border-radius: 0;
-  }
   nav.visible .nav {
-    height: initial;
+    height: auto;
     overflow: initial;
     transition: height .3s ease;
-    flex: 1 1 auto;
   }
+
   nav .nav-button {
     display: inline-flex;
     flex: 1 1 auto;
@@ -188,31 +190,32 @@ nav .nav-button:hover {
     justify-content: center;
     padding: 0;
     flex-wrap: nowrap;
-    align-content: stretch;
+    text-align: center;
   }
+
   .nav li {
     width: 100%;
-  }
-  .nav li:hover .nav__sub {
     display: flex;
-    flex-direction: column;
+    justify-content: center; /* Center the button itself horizontally */
   }
+
   .nav li a {
-    text-align: center;
+    display: flex; /* Ensure the anchor behaves like a flex container */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    padding: 15px 0; /* Adjust padding for mobile */
+    width: 100%; /* Make buttons full width */
+    text-align: center; /* Ensure text is centered */
   }
 
   .nav__sub {
     flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: stretch;
     position: initial;
-  }
-  .nav__sub li {
-    flex: 0 1 auto;
+    width: 100%;
   }
 }
+
+
 .button {
   display: inline-block;
   border-width: 1px;
