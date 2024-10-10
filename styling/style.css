@@ -100,6 +100,7 @@ nav .nav-button:hover {
   padding: 0 40px;
   height: initial;
   transition: height .3s ease;
+  max-height: 83px;
 }
 .nav > li {
   list-style: none;
@@ -113,7 +114,7 @@ nav .nav-button:hover {
   text-decoration: none;
   padding: 30px 15px;
 }
-.nav > li:hover > a {
+.nav > li:hover > a:not(.home-image) {
   background: #b41b21;
   color: #f7f7f7;
 }
@@ -130,6 +131,7 @@ nav .nav-button:hover {
   position: absolute;
   background: #b41b21;
 }
+
 .nav__sub > li {
   display: flex;
   position: relative;
@@ -251,4 +253,14 @@ nav .nav-button:hover {
 .account {
   position: absolute;
   right: 40px;
+}
+
+.burger-menu {
+  position: absolute;
+  left: 40px;
+}
+
+.home {
+  position: relative;
+  top: -45px;
 }
