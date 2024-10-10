@@ -236,8 +236,19 @@ nav .nav-button:hover {
 .button--primary {
   background-color: #d82028;
   color: #fff;
+  min-width: 70px;
 }
 .button--primary:hover, .button--primary:active {
   background-color: #ac1920;
   color: #eee;
+}
+
+.cart {
+  position: absolute;
+  right: 100px;
+}
+
+.account {
+  position: absolute;
+  right: 40px;
 }
