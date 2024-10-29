@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -99,7 +104,7 @@
                     <div class="form-group">
                         <textarea class="form-control" rows="5" id="comment" placeholder="bericht"></textarea>
                     </div>
-                    <button class="btn btn-block" type="submit">Send Now!</button>
+                    <button class="btn btn-block" type="submit">verzend nu!</button>
                 </form>
             </div>
         </div>
