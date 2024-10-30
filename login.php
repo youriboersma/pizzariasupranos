@@ -39,20 +39,26 @@
 </ul>
 </nav>
 
-<div class="login-container"></div>
-  <h2>INLOGGEN</h2>
-  <form>
-    <div class="input-group">
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required>
+<div class="container">
+    <div class="form-section">
+        <div class="auth-card">
+            <h2>Inloggen</h2>
+            <form action="#" method="post">
+                <div class="input-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Wachtwoord *</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Inloggen</button>
+            </form>
+        </div>
     </div>
-    <div class="input-group">
-      <label for="password">Wachtwoord</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit" class="login-btn">Aanmelden</button>
-  </form>
 </div>
+
+
 <!-- partial -->
   <script  src="./scripts/script.js"></script>
 

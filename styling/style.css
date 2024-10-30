@@ -480,3 +480,55 @@ body {
       grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.auth-card {
+  background-color: #d82028; /* Red background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 150px;
+  text-align: center;
+  color: #fff; /* White text for title */
+}
+
+.auth-card h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.auth-card .input-group {
+  margin-bottom: 15px;
+  text-align: left; /* Aligns the label text to the left */
+}
+
+.auth-card label {
+  display: block;
+  color: #fff; /* White text for labels */
+  margin-bottom: 5px;
+}
+
+.auth-card input {
+  display: block; /* Makes inputs block-level for easier centering */
+  width: calc(100% - 20px); /* Ensures consistent width with padding */
+  padding: 10px;
+  margin: 0 auto; /* Centers the input within the card */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.auth-card .submit-btn {
+  background-color: #ac1920;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.auth-card .submit-btn:hover {
+  background-color: #95161c;
+}
