@@ -1,10 +1,17 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizzeria Soprano's Contactpagina</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
 
+<?php
 include("../functions.php");
 
 htmlcontact("Pizzeria Soprano's");
 htmlnavbar();
-
 ?>
 
 <section class="contact" id="contact">
@@ -16,6 +23,7 @@ htmlnavbar();
 
         <!-- PHP-code voor formulierverwerking -->
         <?php
+        // Controleer of het formulier is verzonden
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Databasegegevens
             $servername = "localhost";
@@ -31,19 +39,41 @@ htmlnavbar();
                 die("Verbinding mislukt: " . $conn->connect_error);
             }
 
-            // Haal gegevens op van het formulier en ontsmet deze
-            $naam = $conn->real_escape_string($_POST['naam']);
-            $email = $conn->real_escape_string($_POST['email']);
-            $onderwerp = $conn->real_escape_string($_POST['onderwerp']);
-            $bericht = $conn->real_escape_string($_POST['bericht']);
+            // Haal gegevens op en ontsmet deze
+            $naam = $conn->real_escape_string(trim($_POST['naam']));
+            $email = $conn->real_escape_string(trim($_POST['email']));
+            $onderwerp = $conn->real_escape_string(trim($_POST['onderwerp']));
+            $bericht = $conn->real_escape_string(trim($_POST['bericht']));
 
-            // SQL-query om gegevens in te voegen
-            $sql = "INSERT INTO contact (naam, email, onderwerp, bericht) VALUES ('$naam', '$email', '$onderwerp', '$bericht')";
+            // Server-side validatie: Controleer of alle velden zijn ingevuld
+            $errors = [];
+            if (empty($naam)) {
+                $errors[] = "Naam is verplicht.";
+            }
+            if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = "Een geldig e-mailadres is verplicht.";
+            }
+            if (empty($onderwerp)) {
+                $errors[] = "Onderwerp is verplicht.";
+            }
+            if (empty($bericht)) {
+                $errors[] = "Bericht is verplicht.";
+            }
 
-            if ($conn->query($sql) === TRUE) {
-                echo "<p class='alert alert-success text-center'>Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.</p>";
+            // Als er geen fouten zijn, voer de gegevens in
+            if (empty($errors)) {
+                $sql = "INSERT INTO contact (naam, email, onderwerp, bericht) VALUES ('$naam', '$email', '$onderwerp', '$bericht')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "<p class='alert alert-success text-center'>Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.</p>";
+                } else {
+                    echo "<p class='alert alert-danger text-center'>Fout bij het opslaan van gegevens: " . $conn->error . "</p>";
+                }
             } else {
-                echo "<p class='alert alert-danger text-center'>Fout bij het opslaan van gegevens: " . $conn->error . "</p>";
+                // Toon alle foutmeldingen
+                foreach ($errors as $error) {
+                    echo "<p class='alert alert-danger text-center'>$error</p>";
+                }
             }
 
             // Sluit de verbinding
