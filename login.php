@@ -31,7 +31,7 @@
     <a class="home-image" href="index.html"><img src="./images/sopranos.png" style="width: 240px;"></a>
     </li>
     <li class="cart">
-    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a href="Winkelwagen"><i class="fa-solid fa-cart-shopping"></i></a>
     </li>
     <li class="account">
     <a href="#"><i class="fa-solid fa-user"></i></a>    
