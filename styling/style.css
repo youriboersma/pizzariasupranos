@@ -360,6 +360,7 @@ body {
   padding: 10px 20px;
   margin: 0 5px;
   cursor: pointer;
+  border-radius: 10px;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
@@ -370,7 +371,7 @@ body {
 }
 
 .menu-btn:hover {
-  background-color: #3498db;
+  background-color: #d82028;
   color: white;
 }
 
@@ -387,6 +388,7 @@ body {
   border: 1px solid #ddd;
   padding: 10px;
   margin: 10px;
+  border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease;
@@ -453,7 +455,7 @@ body {
 }
 
 .product-card .add-btn:hover {
-  background-color: #2980b9;
+  background-color: #80141a;
 }
 
 .product-card .card-footer {
