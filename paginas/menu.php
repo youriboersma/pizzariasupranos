@@ -1,52 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Menu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <script src="https://kit.fontawesome.com/0399110f0f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styling/style.css">
+<?php
 
-</head>
+include("../functions.php");
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<header>
-    <!-- start navigation -->
-    <nav>
-        <ul class="nav" role="navigation">
-        <li class="burger-menu">
-            <a href="#"><i class="fa-solid fa-bars"></i></a>
-            <ul class="nav__sub">
-            <li>
-                <a href="../index.html">Home</a>
-            </li>
-            <li>
-                <a href="../paginas/menu.html">Menu</a>
-            </li>
-            <li>
-                <a href="../paginas/contact.html">Contact</a>
-            </li>
-            <li>
-                <a href="../paginas/about.html">About</a>
-            </li>
-            </ul>
-        </li>
-        <li class="home">
-            <a class="home-image" href="../index.html"><img src="../images/sopranos.png" style="width: 240px;"></a>
-        </li>
-        <li class="cart">
-            <a href="Winkelwagen.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        </li>
-        <li class="account">
-            <a href="login.php"><i class="fa-solid fa-user"></i></a>    
-        </li>
-        </ul>
-    </nav>
-        <h1 style="text-align:center;">Menu</h1>
+htmlheader("Pizzeria Soprano's");
+htmlnavbar();
 
-</header>
+?>
+
+<h1 style="text-align:center;">Menu</h1>
 
 <div class="menu">
     <button class="menu-btn active" onclick="filterCategory('all')">All</button>
