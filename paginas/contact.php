@@ -78,11 +78,11 @@ htmlnavbar();
                     </div>
                     <div class="info">
                         <i class="far fa-envelope"></i>
-                        <h4 class="d-inline-block">EMAIL: <br><span>example@info.com</span></h4>
+                        <h4 class="d-inline-block">EMAIL: <br><span>pizzeriasopranos@info.com</span></h4>
                     </div>
                     <div class="info">
                         <i class="fas fa-map-marker-alt"></i>
-                        <h4 class="d-inline-block">ADRES:<br><span>6743 last street , Abcd, Xyz</span></h4>
+                        <h4 class="d-inline-block">ADRES:<br><span>6419 AW , Valkenburgerweg 148 , Heerlen</span></h4>
                     </div>
                 </div>
             </div>
