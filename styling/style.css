@@ -377,7 +377,7 @@ body {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(4, 300px);
   justify-content: center;
   gap: 10px;
   padding: 20px;
@@ -402,8 +402,12 @@ body {
 }
 
 .product-card img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; /* Zorgt ervoor dat de breedte nooit groter is dan de container */
+  height: auto;    /* Behoudt de oorspronkelijke verhouding */
+  object-fit: cover; /* Zorgt dat de afbeelding wordt bijgesneden als nodig */
+  width: 100%; /* Vul altijd de breedte van de container */
+  aspect-ratio: 1; /* Maakt de afbeelding container altijd vierkant */
+  display: block;
 }
 
 .product-card h3 {
@@ -416,9 +420,10 @@ body {
 }
 
 .product-card .size-chooser {
-  margin: 10px 0;
+  margin: 1px 0;
   padding: 5px;
   font-size: 14px;
+  border-radius: 5px;
 }
 
 .product-card .size-chooser:hover {
@@ -469,6 +474,128 @@ body {
 .product-card .price {
   font-size: 16px;
   color: #333;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.modal-left, .modal-middle, .modal-right {
+  padding: 10px;
+  flex: 1;
+}
+
+.modal-left img {
+  width: 100%; /* Ensures the image stretches to fit the container */
+  max-width: 300px; /* Optional: limits the maximum width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Crops the image if necessary to fit the space */
+  max-height: 300px; /* Keeps the modal layout consistent */
+  display: block; /* Removes any inline spacing */
+}
+
+.modal-right {
+  text-align: left;
+}
+
+/* Modal for custom pizza */
+
+.large-modal {
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.custom-pizza-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pizza-info {
+  margin-bottom: 20px;
+}
+
+.pizza-info h2 {
+  margin-bottom: 10px;
+}
+
+.pizza-info p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.toppings-container {
+  flex: 2;
+  padding-right: 20px;
+}
+
+.toppings-list label {
+  display: block;
+  margin: 5px 0;
+}
+
+.toppings-list input[type="checkbox"]:checked {
+  accent-color: #d82028; /* This changes the color of the checkbox when checked */
+}
+
+/* Style the text color when the checkbox is checked (optional) */
+.toppings-list input[type="checkbox"]:checked + label {
+  color: #d82028; /* Change the label text color to match the checkbox when checked */
+}
+
+.order-section {
+  flex: 1;
+  text-align: center;
+}
+
+.size-section, .price-section {
+  margin-bottom: 20px;
+}
+
+.modal-add-btn {
+  background-color: #d82028;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.modal-add-btn:hover {
+  background-color: #80141a;
 }
 
 @media (max-width: 900px) {
