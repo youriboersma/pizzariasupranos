@@ -501,6 +501,15 @@ body {
   overflow: auto;
 }
 
+.toppings-extra input[type="checkbox"]:checked + label {
+  color: #d82028; /* Change the label text color to match the checkbox when checked */
+}
+
+/* Style the text color when the checkbox is checked (optional) */
+.toppings-extra input[type="checkbox"]:checked + label {
+  color: #d82028; /* Change the label text color to match the checkbox when checked */
+}
+
 .close {
   color: #aaa;
   font-size: 28px;
@@ -596,6 +605,24 @@ body {
 
 .modal-add-btn:hover {
   background-color: #80141a;
+}
+
+.popup-message {
+  position: fixed;
+  top: 100px; /* Adjusted from 20px to 60px for a lower position */
+  right: 10px;
+  background-color: #4CAF50; /* Green for success */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 9999;
+  display: block;
+}
+
+.alert-danger {
+  background-color: #f44336; /* Red for error */
 }
 
 @media (max-width: 900px) {
