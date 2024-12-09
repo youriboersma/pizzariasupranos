@@ -52,7 +52,7 @@ function updatePrice(selectElement) {
 
 const pizzaData = {
     "Pizza Margherita": {
-        image: "../images/margherita.jpg",
+        image: "../images/margherita.jpeg",
         description: "Pizzadeeg (bloem, water, zout, gist, olijfolie), tomatensaus (gepelde tomaten, zout, olijfolie, basilicum), mozzarella (Mozzarella di Bufala of Fior di Latte), verse basilicumblaadjes, extra vierge olijfolie.",
         basePrice: 7
     },
@@ -67,17 +67,17 @@ const pizzaData = {
         basePrice: 8
     },
     "Chicken Kebab": {
-        image: "../images/kebab.jpg",
+        image: "../images/kebab.avif",
         description: "Pizzadeeg, tomatensaus, kaas, gegrilde kip, champignons, en een vleugje knoflooksaus.",
         basePrice: 6.5
     },
     "Veggi": {
-        image: "../images/veggie.jpg",
+        image: "../images/veggie.png",
         description: "Pizzadeeg, tomatensaus, kaas, een mix van verse seizoensgroenten zoals paprika, courgette, en rode ui. Perfect voor vegetariërs!",
         basePrice: 7.5
     },
     "Caprese": {
-        image: "../images/caprese.jpg",
+        image: "../images/caprese.webp",
         description: "Pizzadeeg, tomatensaus, mozzarella, verse tomaten, basilicum en een scheutje balsamico voor een klassieke Italiaanse smaak.",
         basePrice: 9
     }
@@ -179,4 +179,26 @@ document.getElementById('customPizzaModal').addEventListener('click', (event) =>
     if (event.target === document.getElementById('customPizzaModal')) {
         closeCustomPizzaModal();
     }
+});
+
+// Function to calculate the total price for the pizza modal
+function calculatePizzaPrice() {
+    // Get the selected size's base price
+    const sizePrice = parseFloat(document.getElementById('pizzaSizeChooser').selectedOptions[0].value);
+
+    // Calculate the extra toppings price (each topping costs 0.50)
+    const extras = document.querySelectorAll('#pizzaModal .modal-right input[type="checkbox"]:checked');
+    const extrasPrice = extras.length * 0.50; // Each extra costs 0.50
+
+    // Calculate total price
+    const totalPrice = sizePrice + extrasPrice;
+
+    // Update the price display
+    document.getElementById('totalPrice').textContent = `${totalPrice.toFixed(2)}€`;
+}
+
+// Add event listeners for size dropdown and extras checkboxes
+document.getElementById('pizzaSizeChooser').addEventListener('change', calculatePizzaPrice);
+document.querySelectorAll('#pizzaModal .modal-right input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', calculatePizzaPrice);
 });
