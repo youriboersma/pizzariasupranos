@@ -58,8 +58,7 @@ function bg() {
 			<div class='banner__container'>
 			  <h1 class='banner__hero'>Pizzeria soprano's</h1>
 			  <div>
-				<a href='./bestel.php' class='button button--primary'>Bezorgen</a>
-				<a href='./bestel.php' class='button button--primary'>Afhalen</a>
+				<a href='./menu.php' class='button button--primary'>Bekijk het menu</a>
 			  </div>
 			</div>
 		  </div>");
