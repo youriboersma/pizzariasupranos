@@ -75,7 +75,7 @@ $conn->close();
             <p>Kaas, tomatensaus, verse basilicum</p>
             <div class="card-footer">
                 <span class="price" data-base-price="7">7,00€</span>
-                <select class="size-chooser" name="grootte">
+                <select class="size-chooser" name="grootte" onchange="updatePrice(this)">
                     <option value="small">Small</option>
                     <option value="medium" selected>Medium</option>
                     <option value="large">Large</option>
@@ -90,18 +90,18 @@ $conn->close();
     <!-- Vivaldi's Quatro Stagiani -->
     <div class="product-card pizza">
         <form action="menu.php" method="POST">
-            <img src="../images/quattro.jpg" alt="Vivaldi's Quatro Stagiani">
-            <h3>Vivaldi’s Quatro Stagioni</h3>
+            <img src="../images/quattro.jpg" alt="Vivaldi’s Quatro Stagiani">
+            <h3>Vivaldi’s Quatro Stagiani</h3>
             <p>Kaas, tomatensaus, champignons, artisjokken, ham, olijven</p>
             <div class="card-footer">
                 <span class="price" data-base-price="7">7,00€</span>
-                <select class="size-chooser" name="grootte">
+                <select class="size-chooser" name="grootte" onchange="updatePrice(this)">
                     <option value="small">Small</option>
                     <option value="medium" selected>Medium</option>
                     <option value="large">Large</option>
                     <option value="family">Family</option>
                 </select>
-                <input type="hidden" name="itemName" value="Vivaldi’s Quatro Stagioni">
+                <input type="hidden" name="itemName" value="Vivaldi’s Quatro Stagiani">
                 <button class="add-btn" type="submit" name="add_menu_item">+</button>
             </div>
         </form>
@@ -115,7 +115,7 @@ $conn->close();
             <p>Kaas, tomatensaus, jalapeño, gekruid gehakt, maïs</p>
             <div class="card-footer">
                 <span class="price" data-base-price="8">8,00€</span>
-                <select class="size-chooser" name="grootte">
+                <select class="size-chooser" name="grootte" onchange="updatePrice(this)">
                     <option value="small">Small</option>
                     <option value="medium" selected>Medium</option>
                     <option value="large">Large</option>
@@ -135,7 +135,7 @@ $conn->close();
             <p>Kaas, tomatensaus, gegrilde kip, knoflooksaus</p>
             <div class="card-footer">
                 <span class="price" data-base-price="6.5">6,50€</span>
-                <select class="size-chooser" name="grootte">
+                <select class="size-chooser" name="grootte" onchange="updatePrice(this)">
                     <option value="small">Small</option>
                     <option value="medium" selected>Medium</option>
                     <option value="large">Large</option>
@@ -155,7 +155,7 @@ $conn->close();
             <p>Kaas, tomatensaus, paprika, champignons, olijven, uien</p>
             <div class="card-footer">
                 <span class="price" data-base-price="7.5">7,50€</span>
-                <select class="size-chooser" name="grootte">
+                <select class="size-chooser" name="grootte" onchange="updatePrice(this)">
                     <option value="small">Small</option>
                     <option value="medium" selected>Medium</option>
                     <option value="large">Large</option>
@@ -175,7 +175,7 @@ $conn->close();
             <p>Kaas, tomatensaus, mozzarella, verse tomaten, basilicum</p>
             <div class="card-footer">
                 <span class="price" data-base-price="9">9,00€</span>
-                <select class="size-chooser" name="grootte">
+                <select class="size-chooser" name="grootte" onchange="updatePrice(this)">
                     <option value="small">Small</option>
                     <option value="medium" selected>Medium</option>
                     <option value="large">Large</option>
